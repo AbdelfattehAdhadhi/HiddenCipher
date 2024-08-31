@@ -7,6 +7,7 @@ public class GridManager : Singleton<GridManager>
 {
     public RectTransform gridRectTransform;
     public GridLayoutGroup gridLayoutGroup;
+    public RectTransform matchingBoard;
 
     public GameObject cardPrefab;
 
@@ -55,5 +56,7 @@ public class GridManager : Singleton<GridManager>
         gridLayoutGroup.cellSize = new Vector2(cellSize, cellSize);
         gridLayoutGroup.spacing = new Vector2(spacingX, spacingY);
         gridLayoutGroup.constraintCount = cols;
+
+        matchingBoard.sizeDelta = new Vector2(cellSize, cellSize);
     }
 }
