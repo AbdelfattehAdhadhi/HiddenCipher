@@ -9,14 +9,20 @@ public class GridManager : Singleton<GridManager>
     public GridLayoutGroup gridLayoutGroup;
     public RectTransform matchingBoard;
 
-    public GameObject cardPrefab;
+    [SerializeField] private CardDataSO cardDataSO;
+
+    public CardController cardPrefab;
     public GameObject emptyPrefab;
 
+    private List<CardController> cardControllers = new();
     [SerializeField] private int rows;
     [SerializeField] private int cols;
 
     private void Start()
     {
+        rows = cardDataSO.rows;
+        cols = cardDataSO.cols;
+
         CalculateGridCellSizeAndSpacing();
         SetupGrid(rows, cols);
     }
@@ -40,7 +46,8 @@ public class GridManager : Singleton<GridManager>
             }
             else
             {
-                Instantiate(cardPrefab, transform);
+                CardController card = Instantiate(cardPrefab, transform);
+                cardControllers.Add(card);
             }
         }
     }

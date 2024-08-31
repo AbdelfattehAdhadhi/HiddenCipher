@@ -470,7 +470,8 @@ MonoBehaviour:
   gridRectTransform: {fileID: 701205448}
   gridLayoutGroup: {fileID: 701205451}
   matchingBoard: {fileID: 836974279}
-  cardPrefab: {fileID: 218869650578053552, guid: b70d70cabdd42ee4881cdb9e3b749fcf, type: 3}
+  cardDataSO: {fileID: 11400000, guid: 94af18b4768cd474892f98c1789861d7, type: 2}
+  cardPrefab: {fileID: 8860938096854475610, guid: b70d70cabdd42ee4881cdb9e3b749fcf, type: 3}
   emptyPrefab: {fileID: 218869650578053552, guid: 325fee8becfdfae44b6b2f981210ecbf, type: 3}
   rows: 3
   cols: 3
