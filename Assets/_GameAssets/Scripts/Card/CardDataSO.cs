@@ -25,6 +25,8 @@ public class CardDataSO : ScriptableObject
             result[i + halfCards] = cards[i];
         }
 
+        result.Shuffle();
+
         return result;
     }
 }
