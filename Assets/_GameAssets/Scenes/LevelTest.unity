@@ -471,8 +471,9 @@ MonoBehaviour:
   gridLayoutGroup: {fileID: 701205451}
   matchingBoard: {fileID: 836974279}
   cardPrefab: {fileID: 218869650578053552, guid: b70d70cabdd42ee4881cdb9e3b749fcf, type: 3}
+  emptyPrefab: {fileID: 218869650578053552, guid: 325fee8becfdfae44b6b2f981210ecbf, type: 3}
   rows: 3
-  cols: 2
+  cols: 3
 --- !u!1 &836974278
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ public class GridManager : Singleton<GridManager>
     public RectTransform matchingBoard;
 
     public GameObject cardPrefab;
+    public GameObject emptyPrefab;
 
     [SerializeField] private int rows;
     [SerializeField] private int cols;
@@ -28,10 +29,19 @@ public class GridManager : Singleton<GridManager>
         }
 
         int totalCards = rowCount * colCount;
+        bool isEven = totalCards % 2 == 0;
+        int emptySlotIndex = (totalCards - 1) / 2;
 
         for (int i = 0; i < totalCards; i++)
         {
-            Instantiate(cardPrefab, transform);
+            if (!isEven && i == emptySlotIndex)
+            {
+                Instantiate(emptyPrefab, transform); // Empty slot
+            }
+            else
+            {
+                Instantiate(cardPrefab, transform);
+            }
         }
     }
 
