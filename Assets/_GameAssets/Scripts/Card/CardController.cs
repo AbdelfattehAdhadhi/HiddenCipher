@@ -18,6 +18,9 @@ public class CardController : MonoBehaviour
 
     private const float FlipDuration = 0.3f;
     [SerializeField] private Transform _transform;
+    public int Id => id;
+
+    private bool animationComplete = true;
 
     private void Start()
     {
@@ -47,13 +50,27 @@ public class CardController : MonoBehaviour
                         image.sprite = facedUp ? backSprite : faceSprite;
                     })
                     .Append(_transform.DORotate(Vector3.zero, FlipDuration / 1.2f));
-
+        flipSequence.OnStart(() => animationComplete = false);
         flipSequence.OnComplete(() =>
         {
             facedUp = !facedUp;
             canFlipCard = true;
+            animationComplete = true;
+            if (facedUp)
+            {
+                CardMatchManager.Instance.CardSelected(this);
+            }
         });
 
         flipSequence.Play();
+    }
+
+    public void OnMatchFound()
+    {
+        Debug.Log("It's matched");
+    }
+    public bool IsAnimationComplete()
+    {
+        return animationComplete;
     }
 }
