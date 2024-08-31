@@ -17,6 +17,7 @@ public class CardController : MonoBehaviour
     [SerializeField] private bool canFlipCard = true;
 
     private const float FlipDuration = 0.3f;
+    private const float FlipBackDuration = FlipDuration / 1.2f;
     [SerializeField] private Transform _transform;
     public int Id => id;
 
@@ -36,33 +37,51 @@ public class CardController : MonoBehaviour
 
     public void FlipCard()
     {
-        Debug.Log($"Flip Card: {id}");
-
         if (!canFlipCard) return;
 
         canFlipCard = false;
+        SetButtonInteractable(false); // Disable button click
 
-        Sequence flipSequence = DOTween.Sequence();
+        float targetRotation = facedUp ? 0f : 90f;
+        Sprite newSprite = facedUp ? backSprite : faceSprite;
 
-        flipSequence.Append(_transform.DORotate(new Vector3(0f, 90f, 0f), FlipDuration))
-                    .AppendCallback(() =>
-                    {
-                        image.sprite = facedUp ? backSprite : faceSprite;
-                    })
-                    .Append(_transform.DORotate(Vector3.zero, FlipDuration / 1.2f));
-        flipSequence.OnStart(() => animationComplete = false);
-        flipSequence.OnComplete(() =>
+        CreateFlipSequence(targetRotation, newSprite, () =>
         {
             facedUp = !facedUp;
             canFlipCard = true;
             animationComplete = true;
             if (facedUp)
             {
-                CardMatchManager.Instance.CardSelected(this);
+                OnCardSelected();
             }
         });
+    }
 
-        flipSequence.Play();
+    public void FlipBack()
+    {
+        if (!facedUp) return;
+
+        canFlipCard = false;
+        SetButtonInteractable(false);
+
+        CreateFlipSequence(90f, backSprite, () =>
+        {
+            facedUp = false;
+            canFlipCard = true;
+            animationComplete = true;
+            SetButtonInteractable(true);
+        });
+    }
+
+    private void CreateFlipSequence(float targetRotation, Sprite newSprite, TweenCallback onCompleteCallback)
+    {
+        DOTween.Sequence()
+            .Append(_transform.DORotate(new Vector3(0f, targetRotation, 0f), FlipDuration))
+            .AppendCallback(() => image.sprite = newSprite)
+            .Append(_transform.DORotate(Vector3.zero, FlipBackDuration))
+            .OnStart(() => animationComplete = false)
+            .OnComplete(onCompleteCallback)
+            .Play();
     }
 
     public void OnMatchFound()
@@ -72,5 +91,15 @@ public class CardController : MonoBehaviour
     public bool IsAnimationComplete()
     {
         return animationComplete;
+    }
+
+    private void SetButtonInteractable(bool value)
+    {
+        button.interactable = value;
+    }
+
+    public void OnCardSelected()
+    {
+        CardMatchManager.Instance.CardSelected(this);
     }
 }

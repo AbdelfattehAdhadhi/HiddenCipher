@@ -52,6 +52,11 @@ public class CardMatchManager : Singleton<CardMatchManager>
                 i -= 2;
             }
         }
+
+        foreach (var card in selectedCards.ToList())
+        {
+            card.FlipBack();
+        }
         selectedCards.Clear();
 
         isProcessingMatch = false;
