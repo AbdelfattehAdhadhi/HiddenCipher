@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff987b9cb37b68f48b1163fde0948f97, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  cards: []
+  cards:
+  - cardSprite: {fileID: 21300000, guid: 11af004426515bd4a90ffc7b98de01b6, type: 3}
+    id: 0
+  - cardSprite: {fileID: 21300000, guid: 722c491c6c42ee24e83c09de6f16cf81, type: 3}
+    id: 1
   rows: 2
   cols: 2

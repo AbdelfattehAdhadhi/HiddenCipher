@@ -9,6 +9,24 @@ public class CardDataSO : ScriptableObject
     public Card[] cards;
     public int rows;
     public int cols;
+
+    public Card[] GetCards()
+    {
+        int totalCards = rows * cols;
+        totalCards = totalCards % 2 == 0 ? totalCards : totalCards - 1;
+
+        int halfCards = totalCards / 2;
+
+        Card[] result = new Card[totalCards];
+
+        for (int i = 0; i < halfCards; i++)
+        {
+            result[i] = cards[i];
+            result[i + halfCards] = cards[i];
+        }
+
+        return result;
+    }
 }
 
 [Serializable]

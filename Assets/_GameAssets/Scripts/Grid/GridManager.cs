@@ -14,9 +14,10 @@ public class GridManager : Singleton<GridManager>
     public CardController cardPrefab;
     public GameObject emptyPrefab;
 
+    [SerializeField]
     private List<CardController> cardControllers = new();
-    [SerializeField] private int rows;
-    [SerializeField] private int cols;
+    private int rows;
+    private int cols;
 
     private void Start()
     {
@@ -49,6 +50,17 @@ public class GridManager : Singleton<GridManager>
                 CardController card = Instantiate(cardPrefab, transform);
                 cardControllers.Add(card);
             }
+        }
+
+        InitializeCards();
+    }
+
+    private void InitializeCards()
+    {
+        var cards = cardDataSO.GetCards();
+        for (int i = 0; i < cardControllers.Count; i++)
+        {
+            cardControllers[i].Init(cards[i].id, cards[i].cardSprite);
         }
     }
 
