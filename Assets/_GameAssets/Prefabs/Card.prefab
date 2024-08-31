@@ -96,6 +96,9 @@ MonoBehaviour:
   button: {fileID: 8619257812417697667}
   faceSprite: {fileID: 0}
   backSprite: {fileID: 21300000, guid: 64e09b9696da7c140a2fb71876dcb46b, type: 3}
+  facedUp: 0
+  canFlipCard: 1
+  _transform: {fileID: 2714839474295655810}
 --- !u!114 &8619257812417697667
 MonoBehaviour:
   m_ObjectHideFlags: 0
