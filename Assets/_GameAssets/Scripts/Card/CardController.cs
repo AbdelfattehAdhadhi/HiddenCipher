@@ -87,6 +87,20 @@ public class CardController : MonoBehaviour
     public void OnMatchFound()
     {
         Debug.Log("It's matched");
+        SetButtonInteractable(false);
+        _transform.DOMove(GridManager.Instance.matchingBoard.position, 0.7f)
+            .OnStart(() =>
+            {
+                _transform.SetParent(GridManager.Instance.matchingBoard.parent);
+            })
+            .OnComplete(() =>
+            {
+                _transform.DOScale(0, 0.1f)
+                .OnComplete(() =>
+                {
+                    _transform.gameObject.SetActive(false);
+                });
+            });
     }
     public bool IsAnimationComplete()
     {
