@@ -19,6 +19,8 @@ public class PauseMenuManager : MonoBehaviour
     private bool isPaused = false;
     private bool isSoundOn;
 
+    private Tween pauseMenuTween;
+
     private void Start()
     {
         isSoundOn = SaveSystem.Load("SoundState", 1) == 1;
@@ -31,6 +33,11 @@ public class PauseMenuManager : MonoBehaviour
         pauseButton.onClick.AddListener(OnPauseButtonClicked);
 
         HidePauseMenu();
+    }
+
+    private void OnDisable()
+    {
+        pauseMenuTween.Kill();
     }
 
     private void Update()
@@ -60,7 +67,7 @@ public class PauseMenuManager : MonoBehaviour
         Time.timeScale = 0f;
 
         // Show pause menu with animation
-        pauseMenuCanvasGroup.DOFade(1, 0.5f).SetUpdate(true).OnComplete(() =>
+        pauseMenuTween = pauseMenuCanvasGroup.DOFade(1, 0.5f).SetUpdate(true).OnComplete(() =>
         {
             pauseMenuCanvasGroup.interactable = true;
             pauseMenuCanvasGroup.blocksRaycasts = true;
@@ -73,7 +80,7 @@ public class PauseMenuManager : MonoBehaviour
         Time.timeScale = 1f;
 
         // Hide pause menu with animation
-        pauseMenuCanvasGroup.DOFade(0, 0.2f).SetUpdate(true).OnComplete(() =>
+        pauseMenuTween = pauseMenuCanvasGroup.DOFade(0, 0.2f).SetUpdate(true).OnComplete(() =>
         {
             pauseMenuCanvasGroup.interactable = false;
             pauseMenuCanvasGroup.blocksRaycasts = false;

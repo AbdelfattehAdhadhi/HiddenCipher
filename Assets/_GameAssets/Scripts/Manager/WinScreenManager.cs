@@ -19,6 +19,8 @@ public class WinScreenManager : Singleton<WinScreenManager>
     [SerializeField] private Button reloadButton;
     [SerializeField] private Button menuButton;
 
+    private Tween winScreenTween;
+    private Tween levelCompletedTween;
     private void Start()
     {
         winScreenCanvasGroup.alpha = 0;
@@ -30,13 +32,19 @@ public class WinScreenManager : Singleton<WinScreenManager>
         menuButton.onClick.AddListener(OnMenu);
     }
 
+    private void OnDisable()
+    {
+        levelCompletedTween.Kill();
+        winScreenTween.Kill();
+    }
+
     public void ShowWinScreen()
     {
-        levelCompleteText.transform.DOScale(1.3f, 0.8f)
+        levelCompletedTween = levelCompleteText.transform.DOScale(1.3f, 0.8f)
             .SetLoops(-1, LoopType.Yoyo)
             .SetEase(Ease.Linear);
 
-        winScreenCanvasGroup.DOFade(1, fadeDuration)
+        winScreenTween = winScreenCanvasGroup.DOFade(1, fadeDuration)
             .OnStart(() =>
             {
                 winScreenCanvasGroup.interactable = true;
@@ -46,7 +54,7 @@ public class WinScreenManager : Singleton<WinScreenManager>
 
     public void HideWinScreen()
     {
-        winScreenCanvasGroup.DOFade(0, fadeDuration)
+        winScreenTween = winScreenCanvasGroup.DOFade(0, fadeDuration)
             .OnComplete(() =>
             {
                 winScreenCanvasGroup.interactable = false;

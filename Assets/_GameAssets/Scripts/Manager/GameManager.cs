@@ -50,6 +50,11 @@ public class GameManager : Singleton<GameManager>
         levelTimer.StartTimer();
     }
 
+    public void StopTimer()
+    {
+        levelTimer.StopTimer();
+    }
+
     public void EndLevel()
     {
         levelTimer.StopTimer();
