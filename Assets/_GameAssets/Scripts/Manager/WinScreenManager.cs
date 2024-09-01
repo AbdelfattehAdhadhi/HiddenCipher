@@ -32,6 +32,10 @@ public class WinScreenManager : Singleton<WinScreenManager>
 
     public void ShowWinScreen()
     {
+        levelCompleteText.transform.DOScale(1.3f, 0.8f)
+            .SetLoops(-1, LoopType.Yoyo)
+            .SetEase(Ease.Linear);
+
         winScreenCanvasGroup.DOFade(1, fadeDuration)
             .OnStart(() =>
             {
