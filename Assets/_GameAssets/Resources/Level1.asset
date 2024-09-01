@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: 
   cards:
-  - cardSprite: {fileID: 21300000, guid: 61c6143c199121c479eb79e4d1dd625b, type: 3}
+  - cardSprite: {fileID: 21300000, guid: 3c79e082dcd97bd4fba52136bbdfe366, type: 3}
     id: 0
-  - cardSprite: {fileID: 21300000, guid: 722c491c6c42ee24e83c09de6f16cf81, type: 3}
+  - cardSprite: {fileID: 21300000, guid: 9261a81ab660dca41a941839ad4dd639, type: 3}
     id: 1
   rows: 2
   cols: 2

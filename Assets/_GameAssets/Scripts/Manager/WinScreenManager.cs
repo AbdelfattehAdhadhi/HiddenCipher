@@ -68,7 +68,7 @@ public class WinScreenManager : Singleton<WinScreenManager>
 
     private void OnNextLevel()
     {
-        GameProgressManager.Instance.LoadNextLevel();
+        GameProgressManager.Instance?.LoadNextLevel();
     }
 
     private void OnReloadLevel()

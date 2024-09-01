@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.32549024, g: 0.642653, b: 1, a: 1}
+  m_Color: {r: 0.050980393, g: 0.6784314, b: 0.73333335, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -247,15 +247,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
+  m_Color: {r: 0, g: 0.7779726, b: 0.8490566, a: 0.39607844}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 4fceb4dd10e4d8a44a757d6f1426e1cb, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 200, y: 200}
+  m_CellSize: {x: 200, y: 149.3}
   m_Spacing: {x: 50, y: 50}
   m_Constraint: 1
   m_ConstraintCount: 4
@@ -323,7 +323,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 1.537, y: -134.364}
+  m_AnchoredPosition: {x: 1.537, y: -146}
   m_SizeDelta: {x: 548.355, y: 98.729}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &717559112003493543
@@ -356,8 +356,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Levels
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 99e244be027ae47469c560952a5a2927, type: 2}
+  m_sharedMaterial: {fileID: 2827998721007952024, guid: 99e244be027ae47469c560952a5a2927, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -381,8 +381,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 72
+  m_fontSize: 85
+  m_fontSizeBase: 85
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -522,6 +522,10 @@ PrefabInstance:
       propertyPath: levelIndex
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6203040928836464515, guid: 0f362351152fa344aadba3214026e8a1, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f362351152fa344aadba3214026e8a1, type: 3}
 --- !u!224 &2192874118795391529 stripped
@@ -627,6 +631,10 @@ PrefabInstance:
     - target: {fileID: 4486669664576987542, guid: 0f362351152fa344aadba3214026e8a1, type: 3}
       propertyPath: levelIndex
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203040928836464515, guid: 0f362351152fa344aadba3214026e8a1, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f362351152fa344aadba3214026e8a1, type: 3}
@@ -734,6 +742,10 @@ PrefabInstance:
       propertyPath: levelIndex
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6203040928836464515, guid: 0f362351152fa344aadba3214026e8a1, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f362351152fa344aadba3214026e8a1, type: 3}
 --- !u!224 &2192874119171086264 stripped
@@ -839,6 +851,10 @@ PrefabInstance:
     - target: {fileID: 4486669664576987542, guid: 0f362351152fa344aadba3214026e8a1, type: 3}
       propertyPath: levelIndex
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203040928836464515, guid: 0f362351152fa344aadba3214026e8a1, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f362351152fa344aadba3214026e8a1, type: 3}
@@ -946,6 +962,10 @@ PrefabInstance:
       propertyPath: levelIndex
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6203040928836464515, guid: 0f362351152fa344aadba3214026e8a1, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f362351152fa344aadba3214026e8a1, type: 3}
 --- !u!224 &2192874120196561780 stripped
@@ -1051,6 +1071,10 @@ PrefabInstance:
     - target: {fileID: 4486669664576987542, guid: 0f362351152fa344aadba3214026e8a1, type: 3}
       propertyPath: levelIndex
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203040928836464515, guid: 0f362351152fa344aadba3214026e8a1, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f362351152fa344aadba3214026e8a1, type: 3}
@@ -1158,6 +1182,10 @@ PrefabInstance:
       propertyPath: levelIndex
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6203040928836464515, guid: 0f362351152fa344aadba3214026e8a1, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f362351152fa344aadba3214026e8a1, type: 3}
 --- !u!224 &2192874120108172618 stripped
@@ -1259,6 +1287,10 @@ PrefabInstance:
     - target: {fileID: 1701216416235177955, guid: 0f362351152fa344aadba3214026e8a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203040928836464515, guid: 0f362351152fa344aadba3214026e8a1, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f362351152fa344aadba3214026e8a1, type: 3}

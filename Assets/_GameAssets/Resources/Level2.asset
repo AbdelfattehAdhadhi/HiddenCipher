@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Level2
   m_EditorClassIdentifier: 
   cards:
-  - cardSprite: {fileID: 21300000, guid: 61c6143c199121c479eb79e4d1dd625b, type: 3}
+  - cardSprite: {fileID: 21300000, guid: 3c79e082dcd97bd4fba52136bbdfe366, type: 3}
     id: 0
-  - cardSprite: {fileID: 21300000, guid: 722c491c6c42ee24e83c09de6f16cf81, type: 3}
+  - cardSprite: {fileID: 21300000, guid: 9261a81ab660dca41a941839ad4dd639, type: 3}
     id: 1
-  - cardSprite: {fileID: 21300000, guid: 1aaef91ded78d454fb1d8b6426507f06, type: 3}
+  - cardSprite: {fileID: 21300000, guid: 3715d9c99813be34c94ab21ee0d9f0c2, type: 3}
     id: 2
-  - cardSprite: {fileID: 21300000, guid: 4ab2458326afa154d9bf574c154fab8e, type: 3}
+  - cardSprite: {fileID: 21300000, guid: 1ccdb5bc1ffe21a4eb165c163be7b208, type: 3}
     id: 3
   rows: 3
   cols: 2
