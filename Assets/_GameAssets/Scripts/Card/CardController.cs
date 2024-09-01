@@ -55,6 +55,8 @@ public class CardController : MonoBehaviour
                 OnCardSelected();
             }
         });
+
+        AudioManager.Instance?.PlayFlipSound();
     }
 
     public void FlipBack()

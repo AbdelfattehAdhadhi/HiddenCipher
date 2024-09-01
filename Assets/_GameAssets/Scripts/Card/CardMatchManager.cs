@@ -15,6 +15,7 @@ public class CardMatchManager : Singleton<CardMatchManager>
     public event Action OnMoveMade;
     public event Action OnMatchMade;
     public event Action<int> OnComboMade;
+    public event Action OnNoMatchMade;
 
     public void CardSelected(CardController card)
     {
@@ -70,6 +71,7 @@ public class CardMatchManager : Singleton<CardMatchManager>
             else
             {
                 comboCounter = 0;
+                OnNoMatchMade?.Invoke();
             }
         }
 

@@ -78,6 +78,7 @@ public class GameManager : Singleton<GameManager>
         {
             Debug.Log("You win!");
             EndLevel();
+            AudioManager.Instance?.PlayWinSound();
         }
     }
 }
