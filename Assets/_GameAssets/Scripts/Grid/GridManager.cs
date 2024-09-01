@@ -88,4 +88,10 @@ public class GridManager : Singleton<GridManager>
 
         matchingBoard.sizeDelta = new Vector2(cellSize, cellSize);
     }
+
+    public int GetCardsCount()
+    {
+        //return (rows * cols) & ~1;
+        return cardControllers.Count;
+    }
 }
