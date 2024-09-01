@@ -632,7 +632,7 @@ PrefabInstance:
     - target: {fileID: 3320956669221060502, guid: 063c881cb2c2fad4e8e17789a9881b04, type: 3}
       propertyPath: cardDataSO
       value: 
-      objectReference: {fileID: 11400000, guid: 94af18b4768cd474892f98c1789861d7, type: 2}
+      objectReference: {fileID: 11400000, guid: abed976ecb7872447b429edc60c654d2, type: 2}
     - target: {fileID: 7607825659342600675, guid: 063c881cb2c2fad4e8e17789a9881b04, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -651,10 +651,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7607825659512910567, guid: 063c881cb2c2fad4e8e17789a9881b04, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7607825659512910567, guid: 063c881cb2c2fad4e8e17789a9881b04, type: 3}
-      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7607825659534231232, guid: 063c881cb2c2fad4e8e17789a9881b04, type: 3}
