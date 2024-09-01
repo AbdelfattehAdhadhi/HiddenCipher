@@ -2,9 +2,10 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class CardController : MonoBehaviour
+public class CardController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private int id;
     [SerializeField] private Image image;
@@ -93,9 +94,12 @@ public class CardController : MonoBehaviour
 
     public void OnMatchFound()
     {
-        Debug.Log("It's matched");
         SetButtonInteractable(false);
-        _transform.DOMove(GridManager.Instance.matchingBoard.position, 0.7f)
+
+        Sequence sequence = DOTween.Sequence();
+
+        sequence.Append(_transform.DOMove(GridManager.Instance.matchingBoard.position, 0.7f))
+            .Join(_transform.DORotate(new Vector3(0f, 0f, -360f), 0.7f, RotateMode.FastBeyond360))
             .OnStart(() =>
             {
                 _transform.SetParent(GridManager.Instance.matchingBoard.parent);
@@ -137,5 +141,15 @@ public class CardController : MonoBehaviour
             canFlipCard = true;
             animationComplete = true;
         });
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        //_transform.DORotate(new Vector3(0f, 0f, -3f), 0.2f).SetEase(Ease.OutQuad);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        //_transform.DORotate(Vector3.zero, 0.2f).SetEase(Ease.OutQuad);
     }
 }
