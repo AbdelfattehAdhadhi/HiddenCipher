@@ -15,7 +15,7 @@ public class GameManager : Singleton<GameManager>
         comboCounter = new ComboCounter();
         matchCounter = new MatchCounter();
 
-        StartLevel();
+        //StartLevel();
     }
 
     private void OnEnable()
@@ -90,7 +90,6 @@ public class GameManager : Singleton<GameManager>
     {
         if (matchCounter.GetValue() >= GridManager.Instance.GetCardsCount() / 2)
         {
-            Debug.Log("You win!");
             EndLevel();
             AudioManager.Instance?.PlayWinSound();
         }

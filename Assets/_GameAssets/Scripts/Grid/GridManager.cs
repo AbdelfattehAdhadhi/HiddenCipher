@@ -26,7 +26,7 @@ public class GridManager : Singleton<GridManager>
 
         CalculateGridCellSizeAndSpacing();
         SetupGrid(rows, cols);
-        OnFlipCard();
+        //OnFlipCard();
     }
 
     private void SetupGrid(int rowCount, int colCount)

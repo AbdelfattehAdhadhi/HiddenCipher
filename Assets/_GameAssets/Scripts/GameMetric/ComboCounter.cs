@@ -19,7 +19,6 @@ public class ComboCounter : GameMetric
         {
             TopCombo = CurrentTopCombo;
         }
-        Debug.Log($"TopCombo: {CurrentTopCombo}");
     }
 
     public override void UpdateUI()
