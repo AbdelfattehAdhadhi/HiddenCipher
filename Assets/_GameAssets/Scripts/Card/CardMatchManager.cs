@@ -19,7 +19,6 @@ public class CardMatchManager : Singleton<CardMatchManager>
 
     public void CardSelected(CardController card)
     {
-        Debug.Log("CardSelected");
         if (selectedCards.Contains(card) || isProcessingMatch)
             return;
 

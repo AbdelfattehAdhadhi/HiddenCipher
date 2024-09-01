@@ -58,7 +58,6 @@ public class GameManager : Singleton<GameManager>
     public void EndLevel()
     {
         levelTimer.StopTimer();
-        Debug.Log($"Level completed in {levelTimer.GetElapsedTime()} seconds.");
 
         WinScreenManager.Instance.SetupWinScreen(
             levelTimer.GetElapsedTime(),

@@ -9,7 +9,6 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         unlockedLevels = SaveSystem.Load("UnlockedLevels", 1);
-        Debug.Log(unlockedLevels);
 
         for (int i = 0; i < levelButtons.Length; i++)
         {
