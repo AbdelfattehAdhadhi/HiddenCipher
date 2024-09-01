@@ -4,6 +4,7 @@ using UnityEngine;
 public class ComboCounter : GameMetric
 {
     private int TopCombo;
+    private int CurrentTopCombo;
 
     public override void UpdateMetric()
     {
@@ -13,8 +14,12 @@ public class ComboCounter : GameMetric
 
     public void UpdateTopCombo(int comboCount)
     {
-        TopCombo = (int)Math.Pow(2, comboCount);
-        Debug.Log($"TopCombo: {TopCombo}");
+        CurrentTopCombo = (int)Math.Pow(2, comboCount);
+        if(CurrentTopCombo > TopCombo)
+        {
+            TopCombo = CurrentTopCombo;
+        }
+        Debug.Log($"TopCombo: {CurrentTopCombo}");
     }
 
     public override void UpdateUI()

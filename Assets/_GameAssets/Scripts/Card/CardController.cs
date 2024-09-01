@@ -28,6 +28,11 @@ public class CardController : MonoBehaviour
         button.onClick.AddListener(FlipCard);
     }
 
+    private void OnDisable()
+    {
+        DOTween.KillAll();
+    }
+
     public void Init(int id, Sprite sprite)
     {
         this.id = id;
@@ -117,5 +122,20 @@ public class CardController : MonoBehaviour
     public void OnCardSelected()
     {
         CardMatchManager.Instance.CardSelected(this);
+    }
+
+    public void FlipCardInFirstTime(bool faceUp)
+    {
+        SetButtonInteractable(false);
+        canFlipCard = false;
+        float targetRotation = facedUp ? 0f : 90f;
+        Sprite newSprite = facedUp ? backSprite : faceSprite;
+
+        CreateFlipSequence(targetRotation, newSprite, () =>
+        {
+            facedUp = faceUp;
+            canFlipCard = true;
+            animationComplete = true;
+        });
     }
 }

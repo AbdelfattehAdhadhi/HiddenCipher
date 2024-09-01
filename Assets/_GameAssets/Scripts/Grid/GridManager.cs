@@ -26,6 +26,7 @@ public class GridManager : Singleton<GridManager>
 
         CalculateGridCellSizeAndSpacing();
         SetupGrid(rows, cols);
+        OnFlipCard();
     }
 
     private void SetupGrid(int rowCount, int colCount)
@@ -93,5 +94,35 @@ public class GridManager : Singleton<GridManager>
     {
         //return (rows * cols) & ~1;
         return cardControllers.Count;
+    }
+
+    [ContextMenu("FlipAllCards")]
+    public void OnFlipCard()
+    {
+        FlipAllCards(cardControllers, true);
+    }
+
+    public void FlipAllCards(List<CardController> allCards, bool faceUp)
+    {
+        StartCoroutine(FlipAllCardsCoroutine(allCards, faceUp));
+    }
+
+    private IEnumerator FlipAllCardsCoroutine(List<CardController> allCards, bool faceUp)
+    {
+        foreach (var card in allCards)
+        {
+            card.FlipCardInFirstTime(faceUp);
+        }
+
+        yield return new WaitForSeconds(0.3f); // wait animation time
+
+        float waitTimePerCard = 0.09f;
+        float waitTime = waitTimePerCard * GetCardsCount();
+        yield return new WaitForSeconds(waitTime);
+
+        foreach (var card in allCards)
+        {
+            card.FlipBack();
+        }
     }
 }
