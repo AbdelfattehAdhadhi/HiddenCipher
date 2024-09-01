@@ -10,12 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff987b9cb37b68f48b1163fde0948f97, type: 3}
-  m_Name: Level1
+  m_Name: Level2
   m_EditorClassIdentifier: 
   cards:
   - cardSprite: {fileID: 21300000, guid: 61c6143c199121c479eb79e4d1dd625b, type: 3}
     id: 0
   - cardSprite: {fileID: 21300000, guid: 722c491c6c42ee24e83c09de6f16cf81, type: 3}
     id: 1
-  rows: 2
+  - cardSprite: {fileID: 21300000, guid: 1aaef91ded78d454fb1d8b6426507f06, type: 3}
+    id: 2
+  - cardSprite: {fileID: 21300000, guid: 4ab2458326afa154d9bf574c154fab8e, type: 3}
+    id: 3
+  rows: 3
   cols: 2

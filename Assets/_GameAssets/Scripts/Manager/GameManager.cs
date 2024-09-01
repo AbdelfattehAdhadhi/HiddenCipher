@@ -20,7 +20,7 @@ public class GameManager : Singleton<GameManager>
 
     private void OnEnable()
     {
-        if(CardMatchManager.Instance  != null)
+        if (CardMatchManager.Instance != null)
         {
             CardMatchManager.Instance.OnMoveMade += HandleMoveMade;
             CardMatchManager.Instance.OnMatchMade += HandleMatchMade;
@@ -54,6 +54,16 @@ public class GameManager : Singleton<GameManager>
     {
         levelTimer.StopTimer();
         Debug.Log($"Level completed in {levelTimer.GetElapsedTime()} seconds.");
+
+        WinScreenManager.Instance.SetupWinScreen(
+            levelTimer.GetElapsedTime(),
+            moveCounter.GetValue(),
+            comboCounter.GetValue(),
+            comboCounter.GetTopCombo()
+            );
+        WinScreenManager.Instance.ShowWinScreen();
+        if (GameProgressManager.Instance != null)
+            GameProgressManager.Instance.CompleteLevel();
     }
 
     public void HandleMoveMade()
