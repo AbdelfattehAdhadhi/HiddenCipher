@@ -64,7 +64,7 @@ public class PauseMenuManager : MonoBehaviour
     private void PauseGame()
     {
         isPaused = true;
-        Time.timeScale = 0f;
+        GameManager.Instance.StopTimer();
 
         // Show pause menu with animation
         pauseMenuTween = pauseMenuCanvasGroup.DOFade(1, 0.5f).SetUpdate(true).OnComplete(() =>
@@ -77,7 +77,7 @@ public class PauseMenuManager : MonoBehaviour
     private void ResumeGame()
     {
         isPaused = false;
-        Time.timeScale = 1f;
+        GameManager.Instance.StartLevel();
 
         // Hide pause menu with animation
         pauseMenuTween = pauseMenuCanvasGroup.DOFade(0, 0.2f).SetUpdate(true).OnComplete(() =>
